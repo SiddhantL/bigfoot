@@ -636,3 +636,60 @@
   })(jQuery);
 
 }).call(this);
+
+// ---------------------------------------------------------------------------------------------------------------------------
+
+var enableFootnoteCounter = true;
+// Wait for the document to be ready to execute our custom footnote counting
+$(document).ready(function() {
+  $('#footnote-counter').hide();
+  if (enableFootnoteCounter) {  // Only run if the flag is true
+
+    // Show the counter if enabled
+    $('#footnote-counter').show();
+    
+  // Initialize total and unread footnote counters
+  var totalFootnotes = 0;
+  var unreadFootnotes = 0;
+
+  // Function to update the footnote counter in the HTML
+  function updateCounters() {
+      $('#footnote-counter').text(`Total Footnotes: ${totalFootnotes}, Unread Footnotes: ${unreadFootnotes}`);
+  }
+
+  
+  // Initialize Bigfoot.js and then handle the counting
+  $.bigfoot();
+
+  // After Bigfoot.js initializes, we count the total number of footnotes
+  setTimeout(function() {
+      var footnoteButtons = $(".bigfoot-footnote__button");
+      totalFootnotes = footnoteButtons.length;
+      unreadFootnotes = totalFootnotes;
+      
+      // Update the counter display initially
+      updateCounters();
+
+      // Add event listeners to mark footnotes as read on click
+      footnoteButtons.on('click', function() {
+          if (!$(this).hasClass('read')) {
+              $(this).addClass('read');  // Mark footnote as read
+              unreadFootnotes--;  // Decrease unread count
+              updateCounters();  // Update the displayed counters
+          }
+      });
+      $('.bigfoot-footnote__button').on('click', function() {
+      var clickedIndex = $('.bigfoot-footnote__button').index(this);
+      $(this).css('background-color', 'lightgreen');
+  });
+  }, 500);  // Delay ensures Bigfoot.js initializes first
+  }
+});
+
+// sidhant code
+// $(document).ready(function() {
+//   $('.bigfoot-footnote__button').on('click', function() {
+//       var clickedIndex = $('.bigfoot-footnote__button').index(this);
+//       $(this).css('background-color', 'lightgreen');
+//   });
+//   });
