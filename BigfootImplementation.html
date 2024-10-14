@@ -6,7 +6,7 @@
     <title>Bigfoot.js Test</title>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="dist/bigfoot-default.css">
-<script src="dist/bigfoot.js"></script>
+    <script src="dist/bigfoot.js"></script>
 </head>
 <body>
 
@@ -16,7 +16,11 @@
         Bigfoot.js should convert this into an interactive footnote.
     </p>
     <p>
-        You can also add another footnote here.<sup id="fnref2"><a href="#fn2" rel="footnote">2</a></sup>
+        You can also add another footnote here.<sup id="fnref2"><a href="#fn2" rel="footnote">2</a></sup> 
+        This sentence adds some more content.<sup id="fnref3"><a href="#fn3" rel="footnote">3</a></sup>
+    </p>
+    <p>
+        Yet another footnote for testing purposes.<sup id="fnref4"><a href="#fn4" rel="footnote">4</a></sup>
     </p>
 
     <hr>
@@ -29,8 +33,15 @@
             <li id="fn2">
                 This is the second footnote.<a href="#fnref2" rev="footnote">↩</a>
             </li>
+            <li id="fn3">
+                This is the third footnote.<a href="#fnref3" rev="footnote">↩</a>
+            </li>
+            <li id="fn4">
+                This is the fourth footnote.<a href="#fnref4" rev="footnote">↩</a>
+            </li>
         </ol>
     </section>
+
     <div id="footnote-counter"></div>
 
     <script>
@@ -40,4 +51,3 @@
 
 </body>
 </html>
-

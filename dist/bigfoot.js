@@ -685,11 +685,3 @@ $(document).ready(function() {
   }, 500);  // Delay ensures Bigfoot.js initializes first
   }
 });
-
-// sidhant code
-// $(document).ready(function() {
-//   $('.bigfoot-footnote__button').on('click', function() {
-//       var clickedIndex = $('.bigfoot-footnote__button').index(this);
-//       $(this).css('background-color', 'lightgreen');
-//   });
-//   });
