@@ -19,19 +19,17 @@ Bigfoot.js is a lightweight library designed for managing footnotes in web conte
 ## Feature Implementation: Tracking Footnotes
 As part of the task, we successfully got the code running and added a new feature to track the total number of footnotes and unread footnotes. Additionally, we implemented a feature where the footnote button changes its color to green once it is read. 
 
-Before Adding Additional Features:
-![Before Adding Features](./images/BeforeNewFeature.png)
-
-After Adding Additional Features:
-![After Adding Features](./images/AfterNewFeature.png)
-
 The key aspects of this feature:
 - **Default Behavior**: The default state of the footnote button is set to "unread" (tracked as `true`).
 - **Unread Footnote Count**: The number of unread footnotes is dynamically updated as users interact with the footnotes.
 - **Button Color Change**: Upon reading a footnote, the button changes to green, providing visual feedback to users.
   
 ### Images of the Feature:
-(Insert images here)
+Before Adding Additional Features:
+![Before Adding Features](./images/BeforeNewFeature.png)
+
+After Adding Additional Features:
+![After Adding Features](./images/AfterNewFeature.png)
 
 ## Decision
 We would **not use Bigfoot.js** in larger projects due to:
